@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		<h1>Dashboard Python Webserver </h1>
+    <a href="form.html">my link</a>
+		<p>Running a webpage with python nice!</p>
+		<input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        function goPython(){
+            $.ajax({
+              url: "http://localhost:8000/cgi-bin/test.py",
+             context: document.body
+            }).done(function() {
+             alert('Ran python that creates a text file!');;
+            });
+        }
+    </script>
+	</body>
+</html>
